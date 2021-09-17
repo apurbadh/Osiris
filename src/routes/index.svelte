@@ -1,4 +1,4 @@
-<div class="jumbotron text-center   text-white ">
+<div class="jumbotron text-center ">
     <h1><img src="/osiris-rmbg.png" class=" img-fluid" style=" padding:0px; height:100px" alt="main logo"> OSIRIS </h1>
 
 </div>
