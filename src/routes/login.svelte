@@ -84,3 +84,8 @@
 
 
   </style>
+  <svelte:head>
+    <title>Login</title>
+    <meta name="robots" content="noindex nofollow" />
+    <html lang="en" />
+  </svelte:head>
