@@ -1,9 +1,6 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
 from sqlalchemy.sql.functions import user
 import models
-from models import User
+from models import User, Doctor
 
 from fastapi import FastAPI
 from passlib.hash import bcrypt
@@ -13,9 +10,8 @@ from  sqlalchemy.orm import Session
 from sqlalchemy.exc import IntegrityError
 
 
-
-
 models.Base.metadata.create_all(bind=engine)
+
 localSession = Session(bind=engine)
 
 app = FastAPI()
@@ -49,4 +45,16 @@ async def login_user(username: str, password:str):
         return {"message" : "Password does not match"}
 
     return {"message" : "Successfully logged in"}     
+
+
+@app.get("/api/doctor")
+async def get_doctors(page : int):
+    latest_data = localSession.query(Doctor).all()[(page - 1) * 10 : page * 10]
+    return latest_data
+
+
+@app.get("/api/doctor/{doctor_id}")
+async def get_doctor_by_id(doctor_id : int = Path(None, description="Get individual users information", gt=0)):
+    data = localSession.query(Doctor).get(doctor_id)
+    return data
 

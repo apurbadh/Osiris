@@ -1,5 +1,5 @@
-from sqlalchemy import Boolean, Column, Integer, String
-
+from sqlalchemy import Boolean, Column, Integer, String, ForeignKey
+from sqlalchemy.orm import relationship
 from db import Base
 
 
@@ -11,9 +11,32 @@ class User(Base):
     username = Column(String, unique=True)
     email = Column(String, unique=True)
     hashed_password = Column(String)
+    doctor = relationship("Doctor", back_populates="users")
 
     def __init__(self, name, username, email, hashed_password):
         self.name = name
         self.username = username
         self.email  = email
         self.hashed_password = hashed_password
+
+
+class Doctor(Base):
+    __tablename__ = 'doctors'
+    id = Column(Integer(),primary_key=True,nullable=False)
+    user_id = Column(Integer(), ForeignKey("users.id"))
+    qualificaion = Column(String(128),nullable=False)
+    speciality = Column(String(258),nullable=False)
+    contact_email = Column(String(128),nullable=False)
+    contact_number = Column(Integer(),nullable=False)
+    date_joined = Column(DateTime(),default=datetime.utcnow())
+
+    def __init__(self, user_id, qualificaion, speciality,contact_email, contact_number, date_joined):
+        self.user_id = user_id
+        self.qualificaion = qualificaion
+        self.speciality = speciality
+        self.contact_number = contact_number
+        self.contact_email = contact_email
+
+    def __repr__(self):
+        return f"<User id= {self.id} name={self.name} qualificaion={self.qualificaion} speciality={self.speciality} contact={self.contact_email}{self.contact_number} date_joined={self.date_joined}>"
+
