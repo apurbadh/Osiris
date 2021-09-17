@@ -11,3 +11,8 @@
         background-color:blue;
         clip-path: ellipse(150% 100% at 131% 0%);    } */
 </style>
+<svelte:head>
+	<title>Home</title>
+	<meta name="robots" content="noindex nofollow" />
+	<html lang="en" />
+</svelte:head>

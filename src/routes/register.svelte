@@ -78,3 +78,8 @@
     }
 
       </style>
+      <svelte:head>
+        <title>Register</title>
+        <meta name="robots" content="noindex nofollow" />
+        <html lang="en" />
+      </svelte:head>
