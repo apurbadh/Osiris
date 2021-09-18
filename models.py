@@ -12,7 +12,6 @@ class User(Base):
     username = Column(String, unique=True)
     email = Column(String, unique=True)
     hashed_password = Column(String)
-    doctor = relationship("Doctor", back_populates="users")
 
     def __init__(self, name, username, email, hashed_password):
         self.name = name
@@ -24,7 +23,7 @@ class User(Base):
 class Doctor(Base):
     __tablename__ = 'doctors'
     id = Column(Integer(),primary_key=True,nullable=False)
-    user_id = Column(Integer(), ForeignKey("users.id"))
+    name = Column(String(128),) 
     qualificaion = Column(String(128),nullable=False)
     speciality = Column(String(258),nullable=False)
     contact_email = Column(String(128),nullable=False)
