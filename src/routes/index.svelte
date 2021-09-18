@@ -1,7 +1,7 @@
 <script>
     import Nav from "../components/Nav.svelte"
     import Search from "../components/Search.svelte"
-
+    import Footer from "../components/Footer.svelte";
 </script>
 
 <div class="" >
@@ -20,7 +20,7 @@
 
 </div>
 <div class="text-center">
-
+Live Healthy , Live Better
 <Nav/>
 
 
@@ -30,7 +30,7 @@
 
 
 
-
+<Footer/>
 
 <style>
 

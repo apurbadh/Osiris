@@ -111,10 +111,7 @@
     color: #03c04a;
     text-decoration: none;
   }
-  .form .register-form {
-    display: none;
-  }
-
+ 
 
 </style>
   <svelte:head>
