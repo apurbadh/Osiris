@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <svelte:head>
   <title>Register</title>
   <meta name="robots" content="noindex nofollow" />
@@ -7,8 +6,6 @@
 
 
 
-=======
->>>>>>> 83925a8ef1fdfc6e8064f2e3355297b6c06bc4d1
 <script >
  let name, username,email, password, confirm_password,message; 
  message = ""
@@ -44,8 +41,6 @@
 <<<<<<< HEAD
 
 <div >  
-=======
->>>>>>> 83925a8ef1fdfc6e8064f2e3355297b6c06bc4d1
     <div class="login-page">
     
         <div class="form text-center">
