@@ -1,6 +1,6 @@
 from sqlalchemy.sql.functions import user
 from models import User, Doctor, Base
-from fastapi import FastAPI, Depends
+from fastapi import FastAPI, Depends,Path
 from passlib.hash import bcrypt
 from machinelearning import prediction
 from db import SessionLocal, engine
