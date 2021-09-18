@@ -13,16 +13,21 @@
     <div class='wave -one'></div>
     <div class='wave -two'></div>
     <div class='wave -three'></div>
+    <div class="text-center" > </div>
+
     <img src="/osiris-rmbg.png" class=" img-fluid" style=" padding:0px; height:150px" alt="main logo">
+    <h2>OSIRIS</h2>
+
     <div class="wrapper" > 
         <div class=" title typing">
-             OSIRIS 
+              Live Healthy, Live Better
+
         </div>
     </div>
-
+    
 </div>
+            
 <div class="text-center">
-Live Healthy , Live Better
 <Nav/>
 
 
@@ -46,7 +51,7 @@ justify-content: center;
 }
 @keyframes typing {
 from { width: 0}
-to {width: 6em;}
+to {width: 30em;}
 }
 
 @keyframes blink {
@@ -115,17 +120,16 @@ border-color: transparent
 }
 
  .title {
-    width: 30ch;
-    animation: typing 2s steps(30), blink .5s step-end infinite alternate;
+    animation: typing 7s steps(70), blink .5s step-end infinite alternate;
     position: relative;
     white-space: nowrap;
     overflow: hidden;
     border-right: 3px solid;
     font-family: monospace;
-    font-size: 2em;
+    font-size: 1em;
     top: -45%;
     width: 100%;
-    line-height: 400px;
+    line-height: 50px;
     transform: translate3d(0, 0, 0);
     color: black;
 } 
