@@ -1,13 +1,6 @@
-<svelte:head>
-  <title>Register</title>
-  <meta name="robots" content="noindex nofollow" />
-  <html lang="en" />
-</svelte:head>
-
-
-
-<script >
- let name, username,email, password, confirm_password,message; 
+OAOB<<<<<<< HEAD
+<scrOipt >
+ let OBOBname, username,email, password, confirm_password,message; 
  message = ""
  function register()
  {
@@ -37,10 +30,10 @@
 }
 </script>
 
-<div class="" >  
-<<<<<<< HEAD
-
+<div class="bg-dark" >  
+=======
 <div >  
+>>>>>>> 4414aad89181c14a166bde7731a6c9755b90d3e4
     <div class="login-page">
     
         <div class="form text-center">
@@ -61,7 +54,7 @@
         </div>
       </div>
 </div>    
-  </div>
+    
       <style>
      
   
@@ -119,4 +112,8 @@
     }
 
       </style>
-
+      <svelte:head>
+        <title>Register</title>
+        <meta name="robots" content="noindex nofollow" />
+        <html lang="en" />
+      </svelte:head>
