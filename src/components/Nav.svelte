@@ -6,6 +6,7 @@
     <a class="btn btn-success" href="/">About us </a>
     <a class="btn btn-success" href="/login"> Login </a>
     <a class="btn btn-success" href="/Comments">Inbox</a>
+    <a class ="btn btn-success" href="/Docs" >Doctors </a>
     
 </div>
 
