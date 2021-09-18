@@ -1,5 +1,5 @@
 from sqlalchemy.sql.functions import user
-from models import User, Doctor, Base
+from models import User, Doctor, Base, Messages
 from fastapi import FastAPI, Depends,Path
 from passlib.hash import bcrypt
 from machinelearning import prediction
@@ -71,3 +71,16 @@ async def get_doctor_by_id(doctor_id : int = Path(None, description="Get individ
     data = localSession.query(Doctor).get(doctor_id)
     return data
 
+@app.post('/api/chat/send')
+async def send_message(sender : int, reciever : int, message : str):
+    localSession = Session(bind=engine)
+    message = Messages(sender, reciever, message)
+    localSession.add(message)
+    localSession.commit()
+
+
+@app.get("/api/chat/{sender}/{reciever}")
+async def get_chat(sender : int, reciever):
+    localSession = Session(bind=engine)
+    message = localSession.query(Messages).filter(Messages.sender == sender)
+    message = message.filter(Messages.reciever == reciever)

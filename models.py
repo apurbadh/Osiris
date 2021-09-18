@@ -40,3 +40,15 @@ class Doctor(Base):
     def __repr__(self):
         return f"<User id= {self.id} name={self.name} qualificaion={self.qualificaion} speciality={self.speciality} contact={self.contact_email}{self.contact_number} date_joined={self.date_joined}>"
 
+class Messages(Base):
+    __tablename__ = "messages"
+    id = Column(Integer(),primary_key=True,nullable=False)
+    sender = Column(Integer(),)
+    reciever = Column(Integer())
+    message = Column(String(10000))
+
+    def __init__(self, sender, reciever, message):
+        self.sender = sender
+        self.reciever = reciever
+        self.message = message
+
