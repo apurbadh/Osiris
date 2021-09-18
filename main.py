@@ -11,7 +11,7 @@ from auth import AuthHandler
 
 
 Base.metadata.create_all(bind=engine)
-localSession = Session(bind=engine)
+
 
 app = FastAPI()
 auth_handler = AuthHandler()
@@ -35,6 +35,7 @@ async def get_prediction(data: str):
 
 @app.post("/api/register")
 async def register_user(name: str, username:str, email:str, password:str):
+    localSession = Session(bind=engine)
     hashed_password =  bcrypt.hash(password)
     user = User(name, username, email, hashed_password)
     try:
