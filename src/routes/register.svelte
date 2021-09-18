@@ -1,3 +1,34 @@
+<script >
+ let name, username,email, password, confirm_password,message; 
+ message = ""
+ function register()
+ {
+  if (username.length < 3 || password.length <8)
+  {
+    Swal.fire('Username must be more than 3 characters and password must be greater than 8 characters');
+    return
+  } 
+  else if (password != confirm_password)
+  {
+    Swal.fire('Password and Confirm Password Not Same');
+  }
+  else
+  {
+    fetch(`http://localhost:8000/api/register?name=${name}&username=${username}&email=${email}&password=${password}`,{
+      method:'post',
+      mode:'cors'
+    }).then(res=>res.json()).then(msg => message = msg.message).then(()=>
+    {
+      Swal.fire(message).then(()=>
+        {window.location = "/login";
+      })
+      console.log(message)
+
+    })
+  }
+}
+</script>
+
 <div class="bg-dark" >  
     <div class="login-page">
     
@@ -6,14 +37,14 @@
             <img src="/osiris.png" alt="oka" height="100px%" width="100px">
           </div>  
           
-          <form >
-            <input type="text" id="Name" placeholder="Full name"/>
-            <input type="text" id="username" placeholder="Username"/>
-            <input type="text" id="email" placeholder="Email address"/>
-            <input type="password" id="password" placeholder="Password"/>
-            <input type="password" id="confirm_password" placeholder="Confirm Password"/>
+          <form on:submit|preventDefault={register}>
+            <input type="text" required bind:value={name} id="Name" placeholder="Full name"/>
+            <input type="text" required bind:value={username} id="username" placeholder="Username"/>
+            <input type="text" required bind:value={email} id="email" placeholder="Email address"/>
+            <input type="password" required bind:value={password} id="password" placeholder="Password"/>
+            <input type="password" required id="confirm_password" bind:value={confirm_password} placeholder="Confirm Password"/>
 
-            <button>create</button>
+            <button type="submit">Create</button>
             <p class="message">Already registered? <a href="/login">Sign In</a></p>
           </form>
         </div>
