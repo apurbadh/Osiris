@@ -20,20 +20,12 @@ class AuthHandler():
         }
         return jwt.encode(payload, self.secret, algorithm="HS256")
 
-<<<<<<< HEAD
-	def decode_token(self, token):
-	try:
-        	payload = jwt.decode(token, self.secret, algorithms=["HS256"])
-     except:
-         
-
-=======
     def decode_token(self, token):
         try:
-            payload = jwt.decode(toke, self.secret, algorithms=["HS256"])
+            payload = jwt.decode(token, self.secret, algorithms=["HS256"])
+            return payload
         except:
          	raise HTTPException(status_code=401, detail="Invalid Token")
->>>>>>> 0797e820a05eaed67e1aacecdf906699f278cd2c
 
     def auth_wrapper(self, auth : HTTPAuthorizationCredentials = Security(security)):
         return self.decode_token(auth.credentials)
