@@ -1,3 +1,29 @@
+<script>
+  let username,password, message,token
+  message = " "
+
+  function login()
+  {
+    fetch(`http://localhost:8000/api/login?username=${username}&password=${password}`,
+    {
+      method:'post',
+      mode:'cors'
+    }).then(res=>res.json()).then(msg => 
+    {message = msg.message
+      token = msg.token
+    }).then(()=>
+    {
+      if (token)
+      {
+        document.cookie = "token=" + token
+        Swal.fire(message).then(window.location="/")
+      } 
+    })
+
+  }
+</script>
+
+
 <div class="ocean">
   <div class="wave"></div>
   <div class="wave"></div>
@@ -12,16 +38,9 @@
         <img src="/osiris.png" alt="oka" height="100px%" width="100px">
       </div>  
       
-      <form class="register-form">
-        <input type="text" placeholder="Username"/>
-        <input type="password" placeholder="Password"/>
-        <input type="text" placeholder="email address"/>
-        <button>create</button>
-        <p class="message">Already registered? <a href="/">Sign In</a></p>
-      </form>
-      <form class="login-form">
-        <input type="text" placeholder="Username"/>
-        <input type="password" placeholder="Password"/>
+      <form class="login-form" on:submit|preventDefault={login} >
+        <input type="text" bind:value={username} placeholder="Username"/>
+        <input type="password" bind:value={password} placeholder="Password"/>
         <button>login</button>
         <p class="message">Not registered? <a href="/register">Create an account</a></p>
       </form>
@@ -92,10 +111,7 @@
     color: #03c04a;
     text-decoration: none;
   }
-  .form .register-form {
-    display: none;
-  }
-
+ 
 
 </style>
   <svelte:head>

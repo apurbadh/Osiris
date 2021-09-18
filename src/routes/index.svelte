@@ -1,21 +1,46 @@
-<div class="bg-secondary" >
-<div class="jumbotron text-center bg-dark ">
-<div class='box'>
+<script>
+    import Nav from "../components/Nav.svelte"
+    import Search from "../components/Search.svelte"
+    import Footer from "../components/Footer.svelte";
+</script>
+
+
+
+<div class="" >
+<div class="jumbotron">
+    <Search/>
+<div class='box text-center'>
     <div class='wave -one'></div>
     <div class='wave -two'></div>
     <div class='wave -three'></div>
+    <div class="text-center" > </div>
+
     <img src="/osiris-rmbg.png" class=" img-fluid" style=" padding:0px; height:150px" alt="main logo">
+    <h2>OSIRIS</h2>
+
     <div class="wrapper" > 
         <div class=" title typing">
-             OSIRIS 
+              Live Healthy, Live Better
+
         </div>
     </div>
+    
+</div>
+            
+<div class="text-center">
+<Nav/>
+
 
 </div>
+</div>
+</div>
 
-</div>
-</div>
+
+
+<Footer/>
+
 <style>
+
 
 .wrapper {
 height: 100%;
@@ -26,7 +51,7 @@ justify-content: center;
 }
 @keyframes typing {
 from { width: 0}
-to {width: 6em;}
+to {width: 30em;}
 }
 
 @keyframes blink {
@@ -37,10 +62,13 @@ border-color: transparent
 }
 
 .box {
+    /* background-color: #d4fce3; */
+    /* background-color: #d2e3fc; */
+    background-color: #d2fcf5;
     height: 300px;
     border-radius: 100px;
     box-shadow: 0 2px 30px rgba(black, .2);
-    background: lighten(#f0f4c3, 10%);
+    background: lighten(#ffff, 10%);
     position: relative;
     overflow: hidden;
     transform: translate3d(0, 0, 0);
@@ -92,17 +120,16 @@ border-color: transparent
 }
 
  .title {
-    width: 30ch;
-    animation: typing 2s steps(30), blink .5s step-end infinite alternate;
+    animation: typing 7s steps(70), blink .5s step-end infinite alternate;
     position: relative;
     white-space: nowrap;
     overflow: hidden;
     border-right: 3px solid;
     font-family: monospace;
-    font-size: 2em;
+    font-size: 1em;
     top: -45%;
     width: 100%;
-    line-height: 400px;
+    line-height: 50px;
     transform: translate3d(0, 0, 0);
     color: black;
 } 
