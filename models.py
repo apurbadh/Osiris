@@ -23,7 +23,7 @@ class User(Base):
 class Doctor(Base):
     __tablename__ = 'doctors'
     id = Column(Integer(),primary_key=True,nullable=False)
-    name = Column(String(128),) 
+    username = Column(String(128),) 
     qualificaion = Column(String(128),nullable=False)
     speciality = Column(String(258),nullable=False)
     contact_email = Column(String(128),nullable=False)
