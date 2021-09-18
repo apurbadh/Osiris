@@ -6,8 +6,7 @@
 
 <div class="" >
 <div class="jumbotron">
- <Search/>
-
+    <Search/>
 <div class='box text-center'>
     <div class='wave -one'></div>
     <div class='wave -two'></div>
@@ -23,6 +22,7 @@
 <div class="text-center">
 
 <Nav/>
+
 
 </div>
 </div>
