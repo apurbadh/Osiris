@@ -54,7 +54,7 @@ async def login_user(username: str, password:str):
         return {"message" : "Username does not exist"}
     elif not bcrypt.verify(password, found_user.hashed_password):
         return {"message" : "Password does not match"}
-    token = auth_handler.encode_token(found_user["username"])
+    token = auth_handler.encode_token(found_user.username)
     return {"message" : "Successfully logged in", "token" : token}     
 
 
