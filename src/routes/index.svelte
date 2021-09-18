@@ -4,6 +4,8 @@
     import Footer from "../components/Footer.svelte";
 </script>
 
+
+
 <div class="" >
 <div class="jumbotron">
     <Search/>
