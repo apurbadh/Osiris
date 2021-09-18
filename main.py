@@ -48,6 +48,7 @@ async def register_user(name: str, username:str, email:str, password:str):
 
 @app.post("/api/login")
 async def login_user(username: str, password:str):
+    localSession = Session(bind=engine)
     found_user = localSession.query(User).filter(User.username == username).first()
     if not found_user:
         return {"message" : "Username does not exist"}
@@ -59,12 +60,14 @@ async def login_user(username: str, password:str):
 
 @app.get("/api/doctor")
 async def get_doctors(page : int, username=Depends(auth_handler.auth_wrapper)):
+    localSession = Session(bind=engine)
     latest_data = localSession.query(Doctor).all()[(page - 1) * 10 : page * 10]
     return latest_data
 
 
 @app.get("/api/doctor/{doctor_id}")
 async def get_doctor_by_id(doctor_id : int = Path(None, description="Get individual users information", gt=0), username=Depends(auth_handler.auth_wrapper)):
+    localSession = Session(bind=engine)
     data = localSession.query(Doctor).get(doctor_id)
     return data
 
