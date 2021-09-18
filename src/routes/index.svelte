@@ -1,5 +1,9 @@
-<div class="bg-secondary" >
-<div class="jumbotron text-center bg-dark ">
+<script>
+    import Nav from "../components/Nav.svelte"
+</script>
+
+<div class="" >
+<div class="jumbotron text-center ">
 <div class='box'>
     <div class='wave -one'></div>
     <div class='wave -two'></div>
@@ -13,9 +17,17 @@
 
 </div>
 
+<Nav/>
+
 </div>
 </div>
+
+
+
+
+
 <style>
+
 
 .wrapper {
 height: 100%;
@@ -37,10 +49,13 @@ border-color: transparent
 }
 
 .box {
+    /* background-color: #d4fce3; */
+    /* background-color: #d2e3fc; */
+    background-color: #d2fcf5;
     height: 300px;
     border-radius: 100px;
     box-shadow: 0 2px 30px rgba(black, .2);
-    background: lighten(#f0f4c3, 10%);
+    background: lighten(#ffff, 10%);
     position: relative;
     overflow: hidden;
     transform: translate3d(0, 0, 0);

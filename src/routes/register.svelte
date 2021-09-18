@@ -1,4 +1,4 @@
-<div class="bg-dark" >  
+<div >  
     <div class="login-page">
     
         <div class="form text-center">
@@ -21,9 +21,7 @@
 </div>    
     
       <style>
-        .bg-dark{
-          overflow: hidden;
-        }
+     
   
     .login-page {
       width: 360px;
