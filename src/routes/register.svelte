@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <script >
  let name, username,email, password, confirm_password,message; 
  message = ""
@@ -30,10 +29,7 @@
 }
 </script>
 
-<div class="bg-dark" >  
-=======
-<div >  
->>>>>>> 4414aad89181c14a166bde7731a6c9755b90d3e4
+<div class="" >  
     <div class="login-page">
     
         <div class="form text-center">
