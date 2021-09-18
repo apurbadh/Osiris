@@ -1,10 +1,14 @@
 <script>
     import Nav from "../components/Nav.svelte"
+    import Search from "../components/Search.svelte"
+
 </script>
 
 <div class="" >
-<div class="jumbotron text-center ">
-<div class='box'>
+<div class="jumbotron">
+ <Search/>
+
+<div class='box text-center'>
     <div class='wave -one'></div>
     <div class='wave -two'></div>
     <div class='wave -three'></div>
@@ -16,9 +20,11 @@
     </div>
 
 </div>
+<div class="text-center">
 
 <Nav/>
 
+</div>
 </div>
 </div>
 
