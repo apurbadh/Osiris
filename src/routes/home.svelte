@@ -27,3 +27,8 @@ async function getPrediction(){
 </select>
 <button on:click={getPrediction} class="btn btn-primary" style="margin: 5px">Get Prediction</button>
 {/if}
+<svelte:head>
+<title>Predictions</title>
+<meta name="robots" content="noindex nofollow" />
+<html lang="en" />
+</svelte:head>
