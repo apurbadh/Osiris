@@ -17,3 +17,4 @@ class User(Base):
         self.username = username
         self.email  = email
         self.hashed_password = hashed_password
+
