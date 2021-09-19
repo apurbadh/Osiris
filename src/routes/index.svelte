@@ -7,7 +7,7 @@
 
 
 <div class="" >
-<div class="jumbotron">
+<div class="jumbotron" style="margin: 0;">
     <Search/>
 <div class='box text-center'>
     <div class='wave -one'></div>
