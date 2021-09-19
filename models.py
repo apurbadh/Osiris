@@ -32,12 +32,13 @@ class Doctor(Base):
     accepted =  Column(Integer())
 
 
-    def __init__(self, user_id, qualificaion, speciality,contact_email, contact_number, date_joined):
+    def __init__(self, user_id, qualificaion, speciality,contact_email, contact_number,accepted):
         self.user_id = user_id
         self.qualificaion = qualificaion
         self.speciality = speciality
         self.contact_number = contact_number
         self.contact_email = contact_email
+        self.accepted = accepted
 
     def __repr__(self):
         return f"<User id= {self.id} name={self.name} qualificaion={self.qualificaion} speciality={self.speciality} contact={self.contact_email}{self.contact_number} date_joined={self.date_joined}>"
@@ -54,7 +55,6 @@ class Messages(Base):
         self.reciever = reciever
         self.message = message
 
-class Request(Base):
-    __tablename__= "requests"
+
 
     
