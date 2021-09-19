@@ -10,7 +10,10 @@ async function getPrediction(){
 	data = `${value}`
 	data = data.replace("[", "")
 	data = data.replace(" ", "")
-	await fetch(`http://localhost:8000/api/predict?data=${data}`).then(response => response.json()).then(data => prediction = data.a)
+	await fetch(`http://localhost:8000/api/predict?data=${data}`).then(response => response.json()).then(data => {
+		prediction = data.prediction
+	})
+
 }
 </script>
 {#if prediction}

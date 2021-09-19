@@ -8,7 +8,6 @@
 
 <div class="" >
 <div class="jumbotron">
-    <Search/>
 <div class='box text-center'>
     <div class='wave -one'></div>
     <div class='wave -two'></div>
@@ -29,8 +28,7 @@
             
 <div class="text-center">
 <Nav/>
-
-
+<Search/>
 </div>
 </div>
 </div>

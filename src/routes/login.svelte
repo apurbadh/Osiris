@@ -16,9 +16,15 @@
       if (token)
       {
         document.cookie = "token=" + token
+        fetch(`/api/login/${token}`, {
+          method: "post"
+        })
         Swal.fire(message).then(window.location="/")
+      }else{
+        Swal.fire(message)
       } 
-    })
+    }
+    )
 
   }
 </script>
@@ -41,7 +47,7 @@
       <form class="login-form" on:submit|preventDefault={login} >
         <input type="text" bind:value={username} placeholder="Username"/>
         <input type="password" bind:value={password} placeholder="Password"/>
-        <button>login</button>
+        <button type="submit">login</button>
         <p class="message">Not registered? <a href="/register">Create an account</a></p>
       </form>
     </div>
