@@ -60,21 +60,18 @@ async def login_user(username: str, password:str):
     return {"message" : "Successfully logged in", "token" : token}     
 
 @app.post("/api/login/doctor")
-async def register_doctor(username : str, qualification : str, speciality:str, contact_email:str, contact_number:int, accepted:int = 0):
+async def register_doctor(username : str, qualification : str, speciality:str, contact_email:str, contact_number:int):
     localSession  = Session(bind=engine)
-    doctor = Doctor(username, qualification, speciality, contact_email, contact_number, accepted) 
+    doctor = Doctor(username, qualification, speciality, contact_email, contact_number) 
     localSession.add(doctor)
     localSession.commit()
-    valid_doctor = localSession.query(Doctor).filter(Doctor.accepted == 0).first()
+    # valid_doctor = localSession.query(Doctor).filter(Doctor.accepted == 0).first()
 
-# @app.get("/api/doctor")
-# async def get_doctors(page : int, username=Depends(auth_handler.auth_wrapper),):
-#     localSession = Session(bind=engine)
-#     latest_data = localSession.query(Doctor).all()[(page - 1) * 10 : page * 10]
-    # if accepted == 1:
-    #     return latest_data
-    # elif accepted == 0:
-    #     return {"message" : "404 ERROR"}
+@app.get("/api/doctor")
+async def get_doctors(page : int, username=Depends(auth_handler.auth_wrapper),):
+    localSession = Session(bind=engine)
+    latest_data = localSession.query(Doctor).all()[(page - 1) * 10 : page * 10]
+    
 
 @app.get("/api/doctor/{doctor_id}")
 async def get_doctor_by_id(doctor_id : int = Path(None, description="Get individual users information", gt=0), username=Depends(auth_handler.auth_wrapper)):

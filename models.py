@@ -29,16 +29,14 @@ class Doctor(Base):
     contact_email = Column(String(128),nullable=False)
     contact_number = Column(Integer(),nullable=False)
     date_joined = Column(DateTime(),default=datetime.utcnow())
-    accepted =  Column(Integer())
 
 
-    def __init__(self, user_id, qualificaion, speciality,contact_email, contact_number,accepted):
+    def __init__(self, user_id, qualificaion, speciality,contact_email, contact_number):
         self.user_id = user_id
         self.qualificaion = qualificaion
         self.speciality = speciality
         self.contact_number = contact_number
         self.contact_email = contact_email
-        self.accepted = accepted
 
     def __repr__(self):
         return f"<User id= {self.id} name={self.name} qualificaion={self.qualificaion} speciality={self.speciality} contact={self.contact_email}{self.contact_number} date_joined={self.date_joined}>"
