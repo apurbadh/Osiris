@@ -7,12 +7,8 @@
 
 
 <div class="" >
-<<<<<<< HEAD
-<div class="jumbotron">
-=======
 <div class="jumbotron" style="margin: 0;">
     <Search/>
->>>>>>> refs/remotes/origin/frontend
 <div class='box text-center'>
     <div class='wave -one'></div>
     <div class='wave -two'></div>
